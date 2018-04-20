@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+<%= link_to "CSV", products_path(format: "csv") %> <br>
+<%= link_to "Excel", products_path(format: "xls") %><br>
+
+
+<p>
+  Download PDF:
+  <%= link_to 'PDF document',  pdf_path(format: "pdf"), target: '_blank'  %>
+</p>
+
+<h1>Products</h1>
+<table id="products">
+  <tr>
+    <th>Product Name</th>
+    <th>Release Date</th>
+    <th>Price</th>
+  </tr>
+  <%= render @products %>
+</table>
+<%= link_to 'New Product', new_product_path %>

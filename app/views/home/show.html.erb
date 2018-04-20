@@ -1,0 +1,14 @@
+<p>
+  <strong>Name:</strong>
+  <%= @product.try(:name) %>
+</p>
+
+<p>
+  <strong>Released on:</strong>
+  <%= @product.try(:released_on) %>
+</p>
+
+<p>
+  <strong>Price:</strong>
+  <%= @product.try(:price) %>
+</p>

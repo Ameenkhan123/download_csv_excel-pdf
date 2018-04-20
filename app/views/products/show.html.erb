@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+  <!-- Download: -->
+  <%= link_to "CSV", products_path(format: "csv") %> 
+  <%= link_to "Excel", products_path(format: "xls") %>
+  
+<%if @product.special%>
+<p>
+  Download PDF:
+  <%= link_to 'PDF document', download_path(format: "pdf"), target: '_blank'  %>
+</p>
+<%else%>
+<p>
+  Download PDF:
+  <%= link_to 'PDF document',  pdf_path(format: "pdf"), target: '_blank'  %>
+</p>
+<%end%>
+
+<p>
+  <strong>Name:</strong>
+  <%= @product.name %>
+</p>
+
+<p>
+  <strong>Released on:</strong>
+  <%= @product.released_on %>
+</p>
+
+<p>
+  <strong>Price:</strong>
+  <%= @product.price %>
+</p>
+
+<%= link_to 'Edit', edit_product_path(@product) %> |
+<%= link_to 'Back', products_path %>
+
